@@ -1,0 +1,58 @@
+.wrapper {
+  margin-bottom: 70px;
+}
+
+.main {
+  @include flex(center);
+
+  width: 100%;
+  .container {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+.comics {
+  @include flex(center);
+
+  margin-top: 28px;
+
+  &__img {
+    width: 100%;
+    max-width: 292px;
+    height: 438px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__context {
+    width: 100%;
+    max-width: 317px;
+    height: 438px;
+
+    &__title {
+      height: 52px;
+      text-align: center;
+      color: #ffffff;
+      background: #000000;
+      font-size: $font-size-title;
+      font-weight: bold;
+      line-height: 52px;
+    }
+
+    &__info {
+      padding: 0 1rem;
+    }
+    &__summary {
+      padding: 0 1rem;
+    }
+  }
+}
+
+.chapters {
+  @include flex(center);
+
+  flex-direction: column;
+  margin-top: 28px;
+}

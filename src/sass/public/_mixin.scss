@@ -1,0 +1,36 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex($main, $other: $main) {
+  display: flex;
+  justify-content: $main;
+  align-items: $other;
+}
+
+@mixin outline($color) {
+  outline: 1px solid $color;
+}
+
+// breakpoint
+$desktop: 1200px;
+$pad: 768px;
+
+@mixin desktop() {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin pad() {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: $pad) {
+    @content;
+  }
+}
