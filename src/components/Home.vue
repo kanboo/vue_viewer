@@ -69,7 +69,7 @@ import TheHeader from './TheHeader';
 import TheFooter from './TheFooter';
 
 export default {
-  name: 'Index',
+  name: 'Home',
   components: {
     FontAwesomeIcon,
     TheHeader,
