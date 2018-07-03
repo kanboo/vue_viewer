@@ -1,7 +1,12 @@
 <template>
   <header class="header">
     <div class="container">
-      <span class="logo">Comicomic</span>
+      <!-- <span class="logo">
+        Comicomic
+      </span> -->
+      <router-link to="/Home" class="logo">
+        Comicomic
+      </router-link>
     </div>
   </header>
 </template>

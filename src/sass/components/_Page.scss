@@ -1,0 +1,80 @@
+.wrapper {
+  margin-bottom: 70px;
+}
+
+.main {
+  @include flex(center);
+
+  width: 100%;
+  .container {
+    @include flex(center);
+
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .toolBar {
+    // @include outline(red);
+    @include flex(flex-start, center);
+
+    width: 100%;
+    max-width: 620px;
+    margin-top: 24px;
+
+    h3 {
+      margin-right: 8px;
+      color: #000000;
+      font-size: 20px;
+    }
+
+    .select {
+      display: inline-block;
+      width: 127px;
+      height: calc(2.25rem + 2px);
+      padding: .375rem 1.75rem .375rem .75rem;
+      vertical-align: middle;
+      color: #495057;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      background-size: 8px 10px;
+      line-height: 1.5;
+    }
+
+    .view_mode {
+      margin-left: auto;
+      #viewMode {
+        display: none;
+
+        &:checked+ label:after {
+          transform: translateX(100%);
+        }
+      }
+
+      label {
+        position: relative;
+        display: inline-block;
+        width: 48px;
+        height: 20px;
+        margin-bottom: 0;
+        cursor: pointer;
+        vertical-align: top;
+        border: 2px solid #000000;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          transition: .3s;
+          transform: translateX(0%);
+          background-color: #000000;
+        }
+      }
+    }
+  }
+
+  .flickity-slider-demo {
+    margin-top: 24px;
+  }
+}

@@ -27,13 +27,19 @@
                 </li>
                 <li>
                   <h3>Rate</h3>
-                  <span>★★★★★</span>
+                  <span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </span>
                 </li>
               </ul>
             </div>
             <div class="comics__context__summary">
               <h3>Summary</h3>
-              <p v-for="(desc, index) in comics.summary" :key="index">{{ desc }}</p>
+              <p v-html="comics.summary"></p>
             </div>
           </div>
         </div>
@@ -46,10 +52,15 @@
           </div>
           <div class="chapters__list">
             <div class="chapters__list__item">
-              Chapter 1: The F2E Challenge Start!
+              <router-link to="/Page">
+                Chapter 1: The F2E Challenge Start!
+              </router-link>
             </div>
             <div class="chapters__list__item">
-              Chapter 2: Todo List is Going Crazy!
+              <router-link to="/Page">
+                Chapter 2: Todo List is Going Crazy!
+                <span class="newChapter">NEW</span>
+              </router-link>
             </div>
           </div>
 
@@ -78,16 +89,15 @@ export default {
   data() {
     return {
       comics: {
-        imgUrl: 'https://fakeimg.pl/300x400/',
+        // eslint-disable-next-line
+        imgUrl: require('@/assets/material-comic-cover.png'),
         title: 'MY HEXSCHOOL',
         genres: 'Fusce/vehicula/dolor',
         author: 'Namae Shiranai',
         status: 'Ongoing',
         rate: 4,
-        summary: [
-          'If your banker breaks, you snap; if your apothecary by mistake sends you poison in your pills, you die.',
-          'Therefore, I say, I saw that this situation of mine was the precise situation of every mortal that has this Siamese connexion with a plurality of other mortals.'
-        ]
+        summary:
+          'If your banker breaks, you snap; if your apothecary by mistake sends you poison in your pills, you die.<br><br>Therefore, I say, I saw that this situation of mine was the precise situation of every mortal that has this Siamese connexion with a plurality of other mortals.'
       }
     };
   }

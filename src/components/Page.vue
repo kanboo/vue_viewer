@@ -1,10 +1,45 @@
 <template>
   <div class="wrapper">
 
-    <!-- <div is='TheHeader'></div> -->
+    <div is='TheHeader'></div>
 
     <main class="main">
       <div class="container">
+
+        <div class="toolBar">
+          <h3>My Hexschool</h3>
+          <select class="select select_chapter">
+            <option value="c-1">Chapter 1</option>
+            <option value="c-2">Chapter 2</option>
+          </select>
+
+          <select class="select select_page"
+            v-model="selected"
+            @change="change(selected)">
+            <option v-for="(item, index) in imgUrls"
+            :key="index"
+            >Page {{index+1}}</option>
+            <option value="p-1">Page 1</option>
+            <option value="p-2">Page 2</option>
+            <option value="p-3">Page 3</option>
+            <option value="p-4">Page 4</option>
+            <option value="p-5">Page 5</option>
+            <option value="p-6">Page 6</option>
+            <option value="p-7">Page 7</option>
+            <option value="p-8">Page 8</option>
+            <option value="p-9">Page 9</option>
+            <option value="p-10">Page 10</option>
+            <option value="p-11">Page 11</option>
+            <option value="p-12">Page 12</option>
+          </select>
+
+          <div class="view_mode">
+            <i class="fas fa-sun"></i>
+            <input id="viewMode" type="checkbox" name="view_mode">
+            <label for="viewMode"></label>
+            <i class="fas fa-moon"></i>
+          </div>
+        </div>
 
         <div class="flickity-slider-demo">
           <flickity ref="flickity"
@@ -33,27 +68,29 @@
             </div> -->
           </flickity>
         </div>
-<div class="flickity-slider-demo">
-        <div class="carousel-nav js-flickity"
-          data-flickity-options='{ "asNavFor": ".flickityMain" }'>
 
-          <!-- <img class="carousel-cell-image"
-              v-for="(url, index) in imgUrls" :key="index"
-              :data-flickity-lazyload="url" alt=""> -->
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
-          <div class="carousel-cell"></div>
+        <div class="flickity-slider-demo">
+          <div class="carousel-nav js-flickity"
+            ref="carousel-nav"
+            data-flickity-options='{ "asNavFor": ".flickityMain" }'>
+
+            <!-- <img class="carousel-cell-image"
+                v-for="(url, index) in imgUrls" :key="index"
+                :data-flickity-lazyload="url" alt=""> -->
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+            <div class="carousel-cell"></div>
+          </div>
         </div>
-</div>
       <!-- if you don't want to use the buttons Flickity provides -->
       <button @click="previous()">Custom Previous Button</button>
       <button @click="next()">Custom Next Button</button>
@@ -91,6 +128,8 @@ export default {
     return {
       // 原始：https://flickity.metafizzy.co/
       // Vue版：https://github.com/drewjbartlett/vue-flickity
+      pageCount: 12,
+      selected: 0,
       flickityOptions: {
         initialIndex: 0,
         prevNextButtons: true,
@@ -121,6 +160,12 @@ export default {
       ]
     };
   },
+  mounted() {
+    // eslint-disable-next-line
+    // var flktyB = new Flickity('.carousel-nav', {
+    //   asNavFor: '.flickityMain'
+    // });
+  },
   methods: {
     next() {
       this.$refs.flickity.next();
@@ -137,10 +182,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.wrapper {
-  margin: 70px 0;
-}
-
 .flickity-slider-demo {
   overflow: hidden;
   width: 100%;
@@ -161,8 +202,8 @@ export default {
 // }
 
 .carousel {
-  background: #fafafa;
   margin-bottom: 40px;
+  background: #fafafa;
 }
 
 .carousel-cell-image {
@@ -175,39 +216,38 @@ export default {
 }
 
 /* fade in lazy loaded image */
-.carousel-cell-image.flickity-lazyloaded,
-.carousel-cell-image.flickity-lazyerror {
+.carousel-cell-image.flickity-lazyloaded,.carousel-cell-image.flickity-lazyerror {
   opacity: 1;
 }
 
 // -------------------
 .carousel {
-  background: #fafafa;
   margin-bottom: 40px;
+  background: #fafafa;
 }
 
 .carousel-cell {
   width: 100%;
   height: 200px;
   margin-right: 10px;
-  background: #8c8;
-  border-radius: 5px;
   counter-increment: carousel-cell;
+  border-radius: 5px;
+  background: #88cc88;
 }
 
 /* cell number */
 .carousel-cell:before {
+  content: counter(carousel-cell);
   display: block;
   text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
   color: white;
+  font-size: 80px;
+  line-height: 200px;
 }
 
 .carousel-nav .carousel-cell {
-  height: 80px;
   width: 100px;
+  height: 80px;
 }
 
 .carousel-nav .carousel-cell:before {
@@ -216,6 +256,7 @@ export default {
 }
 
 .carousel-nav .carousel-cell.is-nav-selected {
-  background: #ed2;
+  background: #eedd22;
 }
+
 </style>
