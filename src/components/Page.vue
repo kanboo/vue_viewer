@@ -49,34 +49,11 @@
             <img class="carousel-cell-image"
               v-for="(url, index) in imgUrls" :key="index"
               :data-flickity-lazyload="url" alt="">
-
-            <!-- <div class="carousel-cell"
-              v-for="(url, index) in imgUrls" :key="index">
-              <img :src="url" alt="">
-            </div> -->
-            <!-- <div class="carousel-cell">
-              <img src="@/assets/material-storyboard-2.png" alt="">
-            </div>
-            <div class="carousel-cell">
-              <img src="@/assets/material-storyboard-3.png" alt="">
-            </div>
-            <div class="carousel-cell">
-              <img src="@/assets/material-storyboard-4.png" alt="">
-            </div>
-            <div class="carousel-cell">
-              <img src="@/assets/material-storyboard-5.png" alt="">
-            </div> -->
           </flickity>
         </div>
 
         <div class="flickity-slider-demo">
-          <div class="carousel-nav js-flickity"
-            ref="carousel-nav"
-            data-flickity-options='{ "asNavFor": ".flickityMain" }'>
-
-            <!-- <img class="carousel-cell-image"
-                v-for="(url, index) in imgUrls" :key="index"
-                :data-flickity-lazyload="url" alt=""> -->
+          <div class="carousel carousel-nav">
             <div class="carousel-cell"></div>
             <div class="carousel-cell"></div>
             <div class="carousel-cell"></div>
@@ -161,10 +138,16 @@ export default {
     };
   },
   mounted() {
-    // eslint-disable-next-line
-    // var flktyB = new Flickity('.carousel-nav', {
-    //   asNavFor: '.flickityMain'
+    /* eslint-disable */
+    // var flkty = new Flickity('.carousel-main', {
+    //   // options
     // });
+
+    var flkty2 = new Flickity('.carousel-nav', {
+      asNavFor: '.flickityMain',
+      contain: true,
+      pageDots: false
+    });
   },
   methods: {
     next() {
