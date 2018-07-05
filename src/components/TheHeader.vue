@@ -29,13 +29,13 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lagn="scss">
+<style scoped lang="scss">
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 74px;
+  height: 60px;
   background: #000000;
 }
 
@@ -53,6 +53,17 @@ export default {
   font-size: 36px;
   font-weight: bold;
   font-style: italic;
+}
+
+.darkMode {
+  .header {
+    background: #50ff44;
+  }
+
+  .logo {
+    color: #000000;
+    background: #50ff44;
+  }
 }
 
 </style>

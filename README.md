@@ -1,21 +1,11 @@
-# Vue Project
+# 漫畫閱讀器 (Vue)
 
-> A Vue.js project
+Demo 連結：[Viewer](https://kanboo.github.io/vue_viewer/dist/index.html#/)
 
-## Build Setup
+# Preview
 
-```bash
-# install dependencies
-npm install
+![Image](https://raw.githubusercontent.com/kanboo/vue_viewer/master/SideProjectImage/viewer_01.jpg)
 
-# serve with hot reload at localhost:8080
-npm run dev
+![Image](https://raw.githubusercontent.com/kanboo/vue_viewer/master/SideProjectImage/viewer_02.jpg)
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+![Image](https://raw.githubusercontent.com/kanboo/vue_viewer/master/SideProjectImage/viewer_03.jpg)

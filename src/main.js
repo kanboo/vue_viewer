@@ -11,6 +11,7 @@ import faStar from '@fortawesome/fontawesome-free-regular/faStar';
 import faSearch from '@fortawesome/fontawesome-free-solid/faSearch';
 import faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 
+import '@/sass/flickity.css';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/sass/all.scss';
 
